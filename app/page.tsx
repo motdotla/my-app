@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { hello } from "@/lib/env";
 
 export default function Home() {
   return (
@@ -32,6 +33,12 @@ export default function Home() {
               Learning
             </a>{" "}
             center.
+          </p>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            process.env.HELLO:{" "}
+            <code className="rounded bg-zinc-100 px-1.5 py-1 font-mono text-zinc-950 dark:bg-zinc-900 dark:text-zinc-50">
+              {hello ?? "(undefined)"}
+            </code>
           </p>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
