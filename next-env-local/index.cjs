@@ -1,11 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-let dotenvx
-try {
-  dotenvx = require('/var/task/node_modules/@dotenvx/dotenvx')
-} catch (_) {
-  dotenvx = require('@dotenvx/dotenvx')
-}
+const dotenvx = require('./node_modules/@dotenvx/dotenvx')
 
 let initialEnv
 let combinedEnv
