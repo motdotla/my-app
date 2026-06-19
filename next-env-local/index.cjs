@@ -1,5 +1,23 @@
 const fs = require('fs')
 const path = require('path')
+const { execFileSync } = require('child_process')
+
+function dotenvxProbe (label, fn) {
+  try {
+    console.log('[dotenvx-next-env probe]', label, fn())
+  } catch (err) {
+    console.log('[dotenvx-next-env probe]', label, err && err.message)
+  }
+}
+
+dotenvxProbe('cwd', () => process.cwd())
+dotenvxProbe('__dirname', () => __dirname)
+dotenvxProbe('has /var/task/node_modules/.bin', () => fs.existsSync('/var/task/node_modules/.bin'))
+dotenvxProbe('has /var/task/node_modules/.bin/dotenvx', () => fs.existsSync('/var/task/node_modules/.bin/dotenvx'))
+dotenvxProbe('which dotenvx', () => execFileSync('which', ['dotenvx'], { encoding: 'utf8' }).trim())
+dotenvxProbe('resolve @dotenvx/dotenvx', () => require.resolve('@dotenvx/dotenvx'))
+dotenvxProbe('resolve ../node_modules/@dotenvx/dotenvx', () => require.resolve('../node_modules/@dotenvx/dotenvx'))
+
 const dotenvx = require('../node_modules/@dotenvx/dotenvx')
 
 let initialEnv
