@@ -1,3 +1,4 @@
+import "@dotenvx/dotenvx/config";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
