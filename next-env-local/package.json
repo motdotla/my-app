@@ -1,0 +1,10 @@
+{
+  "name": "@next/env",
+  "version": "0.0.0-local",
+  "description": "local dotenvx @next/env shim",
+  "main": "index.cjs",
+  "private": true,
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.74.3"
+  }
+}

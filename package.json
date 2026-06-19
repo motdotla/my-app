@@ -10,13 +10,12 @@
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.74.3",
-    "@dotenvx/next-env": "1.74.3",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "overrides": {
-    "@next/env": "npm:@dotenvx/next-env"
+    "@next/env": "file:./next-env-local"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
